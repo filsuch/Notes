@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#staff {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 20px 0;
+}
+
+.line {
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    width: 100%;
+}
+
+.line:nth-child(1) { top: 20px; }
+.line:nth-child(2) { top: 40px; }
+.line:nth-child(3) { top: 60px; }
+.line:nth-child(4) { top: 80px; }
+.line:nth-child(5) { top: 100px; }
+
+#noteDisplay {
+    position: absolute;
+    font-size: 40px;
+    top: 70px;
+    left: 50px;
+}
+
+#buttons {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+}
