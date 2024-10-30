@@ -3,62 +3,62 @@ let wrongNotes = new Set();
 
 function generateRandomNote() {
     const notes = [
-        { name: 'C', position: '50%', img: 'note.png' },
-        { name: 'C#', position: '50%', img: 'note.png' },
-        { name: 'C♭', position: '50%', img: 'note.png' },
-
-        { name: 'D', position: '45%', img: 'note.png' },
-        { name: 'D#', position: '45%', img: 'note.png' },
-        { name: 'D♭', position: '45%', img: 'note.png' },
-
-        { name: 'E', position: '40%', img: 'note.png' },
-        { name: 'E#', position: '40%', img: 'note.png' },
-        { name: 'E♭', position: '40%', img: 'note.png' },
-
-        { name: 'F', position: '35%', img: 'note.png' },
-        { name: 'F#', position: '35%', img: 'note.png' },
-        { name: 'F♭', position: '35%', img: 'note.png' },
-
-        { name: 'G', position: '30%', img: 'note.png' },
-        { name: 'G#', position: '30%', img: 'note.png' },
-        { name: 'G♭', position: '30%', img: 'note.png' },
-
-        { name: 'A', position: '25%', img: 'note.png' },
-        { name: 'A#', position: '25%', img: 'note.png' },
-        { name: 'A♭', position: '25%', img: 'note.png' },
-
-        { name: 'B', position: '20%', img: 'note.png' },
-        { name: 'B#', position: '20%', img: 'note.png' },
-        { name: 'B♭', position: '20%', img: 'note.png' },
-
+        { name: 'C', position: '45%', img: 'note.png' },
+        { name: 'C#', position: '45%', img: 'note.png' },
+        { name: 'C♭', position: '45%', img: 'note.png' },
+    
+        { name: 'D', position: '40%', img: 'note.png' },
+        { name: 'D#', position: '40%', img: 'note.png' },
+        { name: 'D♭', position: '40%', img: 'note.png' },
+    
+        { name: 'E', position: '35%', img: 'note.png' },
+        { name: 'E#', position: '35%', img: 'note.png' },
+        { name: 'E♭', position: '35%', img: 'note.png' },
+    
+        { name: 'F', position: '30%', img: 'note.png' },
+        { name: 'F#', position: '30%', img: 'note.png' },
+        { name: 'F♭', position: '30%', img: 'note.png' },
+    
+        { name: 'G', position: '25%', img: 'note.png' },
+        { name: 'G#', position: '25%', img: 'note.png' },
+        { name: 'G♭', position: '25%', img: 'note.png' },
+    
+        { name: 'A', position: '20%', img: 'note.png' },
+        { name: 'A#', position: '20%', img: 'note.png' },
+        { name: 'A♭', position: '20%', img: 'note.png' },
+    
+        { name: 'B', position: '15%', img: 'note.png' },
+        { name: 'B#', position: '15%', img: 'note.png' },
+        { name: 'B♭', position: '15%', img: 'note.png' },
+    
         // druhá oktáva
-        { name: 'C2#', position: '15%', img: 'note.png' },
-        { name: 'C2', position: '15%', img: 'note.png' },
-        { name: 'C2♭', position: '15%', img: 'note.png' },
-
-        { name: 'D2#', position: '10%', img: 'note.png' },
-        { name: 'D2', position: '10%', img: 'note.png' },
-        { name: 'D2♭', position: '10%', img: 'note.png' },
-
-        { name: 'E2#', position: '5%', img: 'note.png' },
-        { name: 'E2', position: '5%', img: 'note.png' },
-        { name: 'E2♭', position: '5%', img: 'note.png' },
-
-        { name: 'F2#', position: '0%', img: 'note.png' },
-        { name: 'F2', position: '0%', img: 'note.png' },
-        { name: 'F2♭', position: '0%', img: 'note.png' },
-
-        { name: 'G2#', position: '-5%', img: 'note.png' },
-        { name: 'G2', position: '-5%', img: 'note.png' },
-        { name: 'G2♭', position: '-5%', img: 'note.png' },
-
-        { name: 'A2#', position: '-10%', img: 'note.png' },
-        { name: 'A2', position: '-10%', img: 'note.png' },
-        { name: 'A2♭', position: '-10%', img: 'note.png' },
-
-        { name: 'B2#', position: '-15%', img: 'note.png' },
-        { name: 'B2', position: '-15%', img: 'note.png' },
-        { name: 'B2♭', position: '-15%', img: 'note.png' },
+        { name: 'C2#', position: '10%', img: 'note.png' },
+        { name: 'C2', position: '10%', img: 'note.png' },
+        { name: 'C2♭', position: '10%', img: 'note.png' },
+    
+        { name: 'D2#', position: '5%', img: 'note.png' },
+        { name: 'D2', position: '5%', img: 'note.png' },
+        { name: 'D2♭', position: '5%', img: 'note.png' },
+    
+        { name: 'E2#', position: '0%', img: 'note.png' },
+        { name: 'E2', position: '0%', img: 'note.png' },
+        { name: 'E2♭', position: '0%', img: 'note.png' },
+    
+        { name: 'F2#', position: '-5%', img: 'note.png' },
+        { name: 'F2', position: '-5%', img: 'note.png' },
+        { name: 'F2♭', position: '-5%', img: 'note.png' },
+    
+        { name: 'G2#', position: '-10%', img: 'note.png' },
+        { name: 'G2', position: '-10%', img: 'note.png' },
+        { name: 'G2♭', position: '-10%', img: 'note.png' },
+    
+        { name: 'A2#', position: '-15%', img: 'note.png' },
+        { name: 'A2', position: '-15%', img: 'note.png' },
+        { name: 'A2♭', position: '-15%', img: 'note.png' },
+    
+        { name: 'B2#', position: '-20%', img: 'note.png' },
+        { name: 'B2', position: '-20%', img: 'note.png' },
+        { name: 'B2♭', position: '-20%', img: 'note.png' },
     ];
 
     const randomIndex = Math.floor(Math.random() * notes.length);
