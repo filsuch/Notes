@@ -34,10 +34,39 @@ body {
 }
 
 #buttons {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Mezera mezi řádky */
+}
+
+.button-row {
+    display: flex;
+    gap: 10px; /* Mezera mezi tlačítky */
 }
 
 button {
-    margin: 5px;
-    padding: 10px;
+    width: 50px; /* Nastavení šířky tlačítek */
+    height: 50px; /* Nastavení výšky tlačítek */
+    font-size: 16px; /* Velikost textu */
+    text-align: center;
+    padding: 0;
+}
+
+.note-button {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    padding: 0;
+    transition: background-color 0.3s ease; /* Plynulý přechod barvy */
+}
+
+.note-button.correct {
+    background-color: green;
+    color: white;
+}
+
+.note-button.wrong {
+    background-color: red;
+    color: white;
 }
