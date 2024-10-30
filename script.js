@@ -1,5 +1,5 @@
 let currentNote = '';
-let wrongNotes = new Set(); // Set pro uchování špatně určených not
+let wrongNotes = new Set(); 
 
 function generateRandomNote() {
     const notes = [
@@ -30,39 +30,35 @@ function generateRandomNote() {
         { name: 'B#', position: '20%' },
         { name: 'B', position: '20%' },
         { name: 'B♭', position: '20%' },
-//druha
-   //     { name: 'C2#', position: '15%' },
-   //     { name: 'C2', position: '15%' },
- //       { name: 'C2♭', position: '15%' },
-//
-  //    { name: 'D2#', position: '10%' },
- //     { name: 'D2', position: '10%' },
- //     { name: 'D2♭', position: '10%' },
 
- //     { name: 'E2#', position: '5%' },
- //       { name: 'E2', position: '5%' },
- //       { name: 'E2♭', position: '5%' },
+        // druhá oktáva
+        { name: 'C2#', position: '15%' },
+        { name: 'C2', position: '15%' },
+        { name: 'C2♭', position: '15%' },
 
-  //      { name: 'F2#', position: '15%' },
- //       { name: 'F2', position: '25%' },
-  //      { name: 'F2♭', position: '60%' },
+        { name: 'D2#', position: '10%' },
+        { name: 'D2', position: '10%' },
+        { name: 'D2♭', position: '10%' },
 
- //       { name: 'G2#', position: '10%' },
-  //      { name: 'G2', position: '20%' },
-  //      { name: 'G2♭', position: '65%' },
+        { name: 'E2#', position: '5%' },
+        { name: 'E2', position: '5%' },
+        { name: 'E2♭', position: '5%' },
 
-  //      { name: 'A2#', position: '5%' },
-  //      { name: 'A2', position: '15%' },
-  //      { name: 'A2♭', position: '70%' },
+        { name: 'F2#', position: '0%' },
+        { name: 'F2', position: '0%' },
+        { name: 'F2♭', position: '0%' },
 
-  //      { name: 'B2#', position: '0%' },
-   //     { name: 'B2', position: '10%' },
-  //      { name: 'B2♭', position: '75%' },
-        
-        
-        
-        
+        { name: 'G2#', position: '-5%' },
+        { name: 'G2', position: '-5%' },
+        { name: 'G2♭', position: '-5%%' },
 
+        { name: 'A2#', position: '-10%' },
+        { name: 'A2', position: '-10%' },
+        { name: 'A2♭', position: '-10%' },
+
+        { name: 'B2#', position: '-15%' },
+        { name: 'B2', position: '-15%' },
+        { name: 'B2♭', position: '-15%' },
     ];
 
     const randomIndex = Math.floor(Math.random() * notes.length);
@@ -72,21 +68,47 @@ function generateRandomNote() {
     document.getElementById('noteDisplay').innerText = currentNote;
     document.getElementById('noteDisplay').style.top = notes[randomIndex].position;
 
-    // Obnovení barev tlačítek
+    // Tlačítečka reset
     const buttons = document.querySelectorAll('.note-button');
     buttons.forEach(button => {
         button.classList.remove('correct', 'wrong');
-        button.style.backgroundColor = ''; // Reset barev tlačítek
+        button.style.backgroundColor = '';
     });
 
-    // Resetujeme špatné noty
+    // Reset špatne noty
     wrongNotes.clear();
 }
 
 function checkNote(selectedNote) {
     const buttons = document.querySelectorAll('.note-button');
 
-    if (selectedNote === currentNote) {
+    // Určení tlačítek
+    const validNotes = {
+        'C': ['C', 'C2'],
+        'C#': ['C#', 'C2#'],
+        'C♭': ['C♭', 'C2♭'],
+        'D': ['D', 'D2'],
+        'D#': ['D#', 'D2#'],
+        'D♭': ['D♭', 'D2♭'],
+        'E': ['E', 'E2'],
+        'E#': ['E#', 'E2#'],
+        'E♭': ['E♭', 'E2♭'],
+        'F': ['F', 'F2'],
+        'F#': ['F#', 'F2#'],
+        'F♭': ['F♭', 'F2♭'],
+        'G': ['G', 'G2'],
+        'G#': ['G#', 'G2#'],
+        'G♭': ['G♭', 'G2♭'],
+        'A': ['A', 'A2'],
+        'A#': ['A#', 'A2#'],
+        'A♭': ['A♭', 'A2♭'],
+        'B': ['B', 'B2'],
+        'B#': ['B#', 'B2#'],
+        'B♭': ['B♭', 'B2♭'],
+    };
+
+    // Zjistíme, zda vybraná nota odpovídá aktuální notě
+    if (validNotes[selectedNote] && validNotes[selectedNote].includes(currentNote)) {
         // Pokud je nota správná
         buttons.forEach(button => {
             if (button.innerText === selectedNote) {
