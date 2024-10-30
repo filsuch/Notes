@@ -3,79 +3,92 @@ let wrongNotes = new Set();
 
 function generateRandomNote() {
     const notes = [
-        { name: 'C#', position: '50%' },
-        { name: 'C', position: '50%' },
-        { name: 'C♭', position: '50%' },
+        { name: 'C', position: '50%', img: 'note.png' },
+        { name: 'C#', position: '50%', img: 'note.png' },
+        { name: 'C♭', position: '50%', img: 'note.png' },
 
-        { name: 'D#', position: '45%' },
-        { name: 'D', position: '45%' },
-        { name: 'D♭', position: '45%' },
+        { name: 'D', position: '45%', img: 'note.png' },
+        { name: 'D#', position: '45%', img: 'note.png' },
+        { name: 'D♭', position: '45%', img: 'note.png' },
 
-        { name: 'E#', position: '40%' },
-        { name: 'E', position: '40%' },
-        { name: 'E♭', position: '40%' },
+        { name: 'E', position: '40%', img: 'note.png' },
+        { name: 'E#', position: '40%', img: 'note.png' },
+        { name: 'E♭', position: '40%', img: 'note.png' },
 
-        { name: 'F#', position: '35%' },
-        { name: 'F', position: '35%' },
-        { name: 'F♭', position: '35%' },
+        { name: 'F', position: '35%', img: 'note.png' },
+        { name: 'F#', position: '35%', img: 'note.png' },
+        { name: 'F♭', position: '35%', img: 'note.png' },
 
-        { name: 'G#', position: '30%' },
-        { name: 'G', position: '30%' },
-        { name: 'G♭', position: '30%' },
+        { name: 'G', position: '30%', img: 'note.png' },
+        { name: 'G#', position: '30%', img: 'note.png' },
+        { name: 'G♭', position: '30%', img: 'note.png' },
 
-        { name: 'A#', position: '25%' },
-        { name: 'A', position: '25%' },
-        { name: 'A♭', position: '25%' },
+        { name: 'A', position: '25%', img: 'note.png' },
+        { name: 'A#', position: '25%', img: 'note.png' },
+        { name: 'A♭', position: '25%', img: 'note.png' },
 
-        { name: 'B#', position: '20%' },
-        { name: 'B', position: '20%' },
-        { name: 'B♭', position: '20%' },
+        { name: 'B', position: '20%', img: 'note.png' },
+        { name: 'B#', position: '20%', img: 'note.png' },
+        { name: 'B♭', position: '20%', img: 'note.png' },
 
         // druhá oktáva
-        { name: 'C2#', position: '15%' },
-        { name: 'C2', position: '15%' },
-        { name: 'C2♭', position: '15%' },
+        { name: 'C2#', position: '15%', img: 'note.png' },
+        { name: 'C2', position: '15%', img: 'note.png' },
+        { name: 'C2♭', position: '15%', img: 'note.png' },
 
-        { name: 'D2#', position: '10%' },
-        { name: 'D2', position: '10%' },
-        { name: 'D2♭', position: '10%' },
+        { name: 'D2#', position: '10%', img: 'note.png' },
+        { name: 'D2', position: '10%', img: 'note.png' },
+        { name: 'D2♭', position: '10%', img: 'note.png' },
 
-        { name: 'E2#', position: '5%' },
-        { name: 'E2', position: '5%' },
-        { name: 'E2♭', position: '5%' },
+        { name: 'E2#', position: '5%', img: 'note.png' },
+        { name: 'E2', position: '5%', img: 'note.png' },
+        { name: 'E2♭', position: '5%', img: 'note.png' },
 
-        { name: 'F2#', position: '0%' },
-        { name: 'F2', position: '0%' },
-        { name: 'F2♭', position: '0%' },
+        { name: 'F2#', position: '0%', img: 'note.png' },
+        { name: 'F2', position: '0%', img: 'note.png' },
+        { name: 'F2♭', position: '0%', img: 'note.png' },
 
-        { name: 'G2#', position: '-5%' },
-        { name: 'G2', position: '-5%' },
-        { name: 'G2♭', position: '-5%%' },
+        { name: 'G2#', position: '-5%', img: 'note.png' },
+        { name: 'G2', position: '-5%', img: 'note.png' },
+        { name: 'G2♭', position: '-5%', img: 'note.png' },
 
-        { name: 'A2#', position: '-10%' },
-        { name: 'A2', position: '-10%' },
-        { name: 'A2♭', position: '-10%' },
+        { name: 'A2#', position: '-10%', img: 'note.png' },
+        { name: 'A2', position: '-10%', img: 'note.png' },
+        { name: 'A2♭', position: '-10%', img: 'note.png' },
 
-        { name: 'B2#', position: '-15%' },
-        { name: 'B2', position: '-15%' },
-        { name: 'B2♭', position: '-15%' },
+        { name: 'B2#', position: '-15%', img: 'note.png' },
+        { name: 'B2', position: '-15%', img: 'note.png' },
+        { name: 'B2♭', position: '-15%', img: 'note.png' },
     ];
 
     const randomIndex = Math.floor(Math.random() * notes.length);
     currentNote = notes[randomIndex].name;
-
+    
     // Nastavení pozice noty na notové osnově
-    document.getElementById('noteDisplay').innerText = currentNote;
-    document.getElementById('noteDisplay').style.top = notes[randomIndex].position;
-
-    // Tlačítečka reset
+    const noteDisplay = document.getElementById('noteDisplay');
+    noteDisplay.innerText = currentNote; 
+    noteDisplay.style.top = notes[randomIndex].position;
+    
+    // Vycentrování kontejneru na střed a obrázku vůči textu
+    noteDisplay.style.position = 'relative'; // Kontejner bude relativní k osnově
+    noteDisplay.style.left = '50%'; // Posuneme kontejner do středu
+    noteDisplay.style.transform = 'translateX(-50%)'; // Vycentrování obsahu na střed
+    noteDisplay.style.width = '200px'; // Širší kontejner
+    noteDisplay.style.paddingLeft = '50px'; 
+    // Zobrazení obrázku s posunem od textu
+    noteDisplay.style.backgroundImage = `url(${notes[randomIndex].img})`;
+    noteDisplay.style.backgroundSize = 'contain';
+    noteDisplay.style.backgroundRepeat = 'no-repeat';
+    noteDisplay.style.backgroundPosition = '150px center'; // Nastavíme posun doprava od textu
+    
+    // Tlačítka reset
     const buttons = document.querySelectorAll('.note-button');
     buttons.forEach(button => {
         button.classList.remove('correct', 'wrong');
         button.style.backgroundColor = '';
     });
-
-    // Reset špatne noty
+    
+    // Reset špatné noty
     wrongNotes.clear();
 }
 
@@ -144,4 +157,4 @@ function checkNote(selectedNote) {
     }
 }
 
-window.onload = generateRandomNote;
+window.onload = generateRandomNote; 
