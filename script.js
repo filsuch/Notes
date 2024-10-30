@@ -64,35 +64,32 @@ function generateRandomNote() {
     const randomIndex = Math.floor(Math.random() * notes.length);
     currentNote = notes[randomIndex].name;
     
-    // Nastavení pozice noty na notové osnově
+    
     const noteDisplay = document.getElementById('noteDisplay');
     noteDisplay.innerText = currentNote; 
     noteDisplay.style.top = notes[randomIndex].position;
     
-    // Vycentrování kontejneru na střed a obrázku vůči textu
-    noteDisplay.style.position = 'relative'; // Kontejner bude relativní k osnově
-    noteDisplay.style.left = '50%'; // Posuneme kontejner do středu
-    noteDisplay.style.transform = 'translateX(-50%)'; // Vycentrování obsahu na střed
+    noteDisplay.style.position = 'relative';
+    noteDisplay.style.left = '50%'; 
+    noteDisplay.style.transform = 'translateX(-50%)';
     
-    // Zobrazení obrázku s posunem od textu
     noteDisplay.style.backgroundImage = `url(${notes[randomIndex].img})`;
     noteDisplay.style.backgroundSize = '20%';
     noteDisplay.style.backgroundRepeat = 'no-repeat';
-    noteDisplay.style.backgroundPosition = '150px center'; // Nastavíme posun doprava od textu
+    noteDisplay.style.backgroundPosition = '150px center'; 
     
-    // Nově přidané stylování pro zarovnání textu na střed mezi linkami
-    noteDisplay.style.lineHeight = '20px'; // Nastavíme výšku řádku pro středění textu
-    noteDisplay.style.height = '20px'; // Nastavíme výšku kontejneru
-    noteDisplay.style.width = '200px'; // Nastavíme šířku kontejneru
+    noteDisplay.style.lineHeight = '20px';
+    noteDisplay.style.height = '20px';
+    noteDisplay.style.width = '200px'; 
     
-    // Tlačítka reset
+    
     const buttons = document.querySelectorAll('.note-button');
     buttons.forEach(button => {
         button.classList.remove('correct', 'wrong');
         button.style.backgroundColor = '';
     });
     
-    // Reset špatné noty
+    
     wrongNotes.clear();
 }
 
