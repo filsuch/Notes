@@ -3,27 +3,66 @@ let wrongNotes = new Set(); // Set pro uchování špatně určených not
 
 function generateRandomNote() {
     const notes = [
-        { name: 'C#', position: '30%' },
-        { name: 'D#', position: '25%' },
-        { name: 'E#', position: '20%' },
-        { name: 'F#', position: '15%' },
-        { name: 'G#', position: '10%' },
-        { name: 'A#', position: '5%' },
-        { name: 'B#', position: '0%' },
-        { name: 'C', position: '40%' },
-        { name: 'D', position: '35%' },
-        { name: 'E', position: '30%' },
-        { name: 'F', position: '25%' },
-        { name: 'G', position: '20%' },
-        { name: 'A', position: '15%' },
-        { name: 'B', position: '10%' },
-        { name: 'C♭', position: '45%' },
-        { name: 'D♭', position: '50%' },
-        { name: 'E♭', position: '55%' },
-        { name: 'F♭', position: '60%' },
-        { name: 'G♭', position: '65%' },
-        { name: 'A♭', position: '70%' },
-        { name: 'B♭', position: '75%' },
+        { name: 'C#', position: '50%' },
+        { name: 'C', position: '50%' },
+        { name: 'C♭', position: '50%' },
+
+        { name: 'D#', position: '45%' },
+        { name: 'D', position: '45%' },
+        { name: 'D♭', position: '45%' },
+
+        { name: 'E#', position: '40%' },
+        { name: 'E', position: '40%' },
+        { name: 'E♭', position: '40%' },
+
+        { name: 'F#', position: '35%' },
+        { name: 'F', position: '35%' },
+        { name: 'F♭', position: '35%' },
+
+        { name: 'G#', position: '30%' },
+        { name: 'G', position: '30%' },
+        { name: 'G♭', position: '30%' },
+
+        { name: 'A#', position: '25%' },
+        { name: 'A', position: '25%' },
+        { name: 'A♭', position: '25%' },
+
+        { name: 'B#', position: '20%' },
+        { name: 'B', position: '20%' },
+        { name: 'B♭', position: '20%' },
+//druha
+   //     { name: 'C2#', position: '15%' },
+   //     { name: 'C2', position: '15%' },
+ //       { name: 'C2♭', position: '15%' },
+//
+  //    { name: 'D2#', position: '10%' },
+ //     { name: 'D2', position: '10%' },
+ //     { name: 'D2♭', position: '10%' },
+
+ //     { name: 'E2#', position: '5%' },
+ //       { name: 'E2', position: '5%' },
+ //       { name: 'E2♭', position: '5%' },
+
+  //      { name: 'F2#', position: '15%' },
+ //       { name: 'F2', position: '25%' },
+  //      { name: 'F2♭', position: '60%' },
+
+ //       { name: 'G2#', position: '10%' },
+  //      { name: 'G2', position: '20%' },
+  //      { name: 'G2♭', position: '65%' },
+
+  //      { name: 'A2#', position: '5%' },
+  //      { name: 'A2', position: '15%' },
+  //      { name: 'A2♭', position: '70%' },
+
+  //      { name: 'B2#', position: '0%' },
+   //     { name: 'B2', position: '10%' },
+  //      { name: 'B2♭', position: '75%' },
+        
+        
+        
+        
+
     ];
 
     const randomIndex = Math.floor(Math.random() * notes.length);
