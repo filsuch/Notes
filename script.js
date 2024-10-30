@@ -69,26 +69,26 @@ function generateRandomNote() {
     noteDisplay.innerText = currentNote; 
     noteDisplay.style.top = notes[randomIndex].position;
     
-    // Vycentrování kontejneru na střed a obrázku vůči textu
-    noteDisplay.style.position = 'relative'; // Kontejner bude relativní k osnově
-    noteDisplay.style.left = '50%'; // Posuneme kontejner do středu
-    noteDisplay.style.transform = 'translateX(-50%)'; // Vycentrování obsahu na střed
-    noteDisplay.style.width = '200px'; // Širší kontejner
+    
+    noteDisplay.style.position = 'relative'; 
+    noteDisplay.style.left = '50%';
+    noteDisplay.style.transform = 'translateX(-50%)';
+    noteDisplay.style.width = '200px'; 
     noteDisplay.style.paddingLeft = '50px'; 
-    // Zobrazení obrázku s posunem od textu
+   
     noteDisplay.style.backgroundImage = `url(${notes[randomIndex].img})`;
     noteDisplay.style.backgroundSize = 'contain';
     noteDisplay.style.backgroundRepeat = 'no-repeat';
-    noteDisplay.style.backgroundPosition = '150px center'; // Nastavíme posun doprava od textu
+    noteDisplay.style.backgroundPosition = '150px center'; 
     
-    // Tlačítka reset
+    
     const buttons = document.querySelectorAll('.note-button');
     buttons.forEach(button => {
         button.classList.remove('correct', 'wrong');
         button.style.backgroundColor = '';
     });
     
-    // Reset špatné noty
+   
     wrongNotes.clear();
 }
 
@@ -120,38 +120,38 @@ function checkNote(selectedNote) {
         'B♭': ['B♭', 'B2♭'],
     };
 
-    // Zjistíme, zda vybraná nota odpovídá aktuální notě
+    
     if (validNotes[selectedNote] && validNotes[selectedNote].includes(currentNote)) {
-        // Pokud je nota správná
+        
         buttons.forEach(button => {
             if (button.innerText === selectedNote) {
                 button.classList.add('correct');
-                button.style.backgroundColor = 'green'; // Zelená pro správnou odpověď
+                button.style.backgroundColor = 'green';
             }
         });
 
         setTimeout(() => {
-            generateRandomNote(); // Generuje novou notu
-        }, 1000); // 1 sekunda pro vizuální zpětnou vazbu
+            generateRandomNote(); 
+        }, 500); // 0.5 sekundy
 
-        // Vyčistíme špatné noty, protože správně uhádnuta nota
+    
         wrongNotes.clear();
     } else {
-        // Pokud je nota špatná
-        wrongNotes.add(selectedNote); // Přidáme špatnou notu do seznamu
+       
+        wrongNotes.add(selectedNote); 
 
         buttons.forEach(button => {
             if (button.innerText === selectedNote) {
                 button.classList.add('wrong');
-                button.style.backgroundColor = 'red'; // Červená pro špatnou odpověď
+                button.style.backgroundColor = 'red'; 
             }
         });
 
-        // Označíme špatné noty, dokud nebudou správně uhádnuty
+        
         buttons.forEach(button => {
             if (wrongNotes.has(button.innerText)) {
                 button.classList.add('wrong');
-                button.style.backgroundColor = 'red'; // Udržujeme červenou pro špatné noty
+                button.style.backgroundColor = 'red'; 
             }
         });
     }

@@ -53,24 +53,24 @@ body {
     transform: translate(-50%, -50%);
     font-size: 24px;
     font-weight: bold;
-    transition: top 0.5s; /* Přechod pro animaci */
+    transition: top 0.5s; 
 }
 
 #buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Mezera mezi řádky */
+    gap: 10px;
 }
 
 .button-row {
     display: flex;
-    gap: 10px; /* Mezera mezi tlačítky */
+    gap: 10px; 
 }
 
 button {
-    width: 50px; /* Nastavení šířky tlačítek */
-    height: 50px; /* Nastavení výšky tlačítek */
-    font-size: 16px; /* Velikost textu */
+    width: 50px; 
+    height: 50px; 
+    font-size: 16px; 
     text-align: center;
     padding: 0;
 }
@@ -81,7 +81,7 @@ button {
     font-size: 16px;
     text-align: center;
     padding: 0;
-    transition: background-color 0.3s ease; /* Plynulý přechod barvy */
+    transition: background-color 0.3s ease;
 }
 
 .note-button.correct {
