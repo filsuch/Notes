@@ -1,65 +1,8 @@
+import { notes } from './notes.js';
 let currentNote = '';
 let wrongNotes = new Set(); 
 
 function generateRandomNote() {
-    const notes = [
-        { name: 'C', position: '45%', img: 'note.png' },
-        { name: 'C#', position: '45%', img: 'note.png' },
-        { name: 'C♭', position: '45%', img: 'note.png' },
-    
-        { name: 'D', position: '40%', img: 'note.png' },
-        { name: 'D#', position: '40%', img: 'note.png' },
-        { name: 'D♭', position: '40%', img: 'note.png' },
-    
-        { name: 'E', position: '35%', img: 'note.png' },
-        { name: 'E#', position: '35%', img: 'note.png' },
-        { name: 'E♭', position: '35%', img: 'note.png' },
-    
-        { name: 'F', position: '30%', img: 'note.png' },
-        { name: 'F#', position: '30%', img: 'note.png' },
-        { name: 'F♭', position: '30%', img: 'note.png' },
-    
-        { name: 'G', position: '25%', img: 'note.png' },
-        { name: 'G#', position: '25%', img: 'note.png' },
-        { name: 'G♭', position: '25%', img: 'note.png' },
-    
-        { name: 'A', position: '20%', img: 'note.png' },
-        { name: 'A#', position: '20%', img: 'note.png' },
-        { name: 'A♭', position: '20%', img: 'note.png' },
-    
-        { name: 'B', position: '15%', img: 'note.png' },
-        { name: 'B#', position: '15%', img: 'note.png' },
-        { name: 'B♭', position: '15%', img: 'note.png' },
-    
-        // druhá oktáva
-        { name: 'C2#', position: '10%', img: 'note.png' },
-        { name: 'C2', position: '10%', img: 'note.png' },
-        { name: 'C2♭', position: '10%', img: 'note.png' },
-    
-        { name: 'D2#', position: '5%', img: 'note.png' },
-        { name: 'D2', position: '5%', img: 'note.png' },
-        { name: 'D2♭', position: '5%', img: 'note.png' },
-    
-        { name: 'E2#', position: '0%', img: 'note.png' },
-        { name: 'E2', position: '0%', img: 'note.png' },
-        { name: 'E2♭', position: '0%', img: 'note.png' },
-    
-        { name: 'F2#', position: '-5%', img: 'note.png' },
-        { name: 'F2', position: '-5%', img: 'note.png' },
-        { name: 'F2♭', position: '-5%', img: 'note.png' },
-    
-        { name: 'G2#', position: '-10%', img: 'note.png' },
-        { name: 'G2', position: '-10%', img: 'note.png' },
-        { name: 'G2♭', position: '-10%', img: 'note.png' },
-    
-        { name: 'A2#', position: '-15%', img: 'note.png' },
-        { name: 'A2', position: '-15%', img: 'note.png' },
-        { name: 'A2♭', position: '-15%', img: 'note.png' },
-    
-        { name: 'B2#', position: '-20%', img: 'note.png' },
-        { name: 'B2', position: '-20%', img: 'note.png' },
-        { name: 'B2♭', position: '-20%', img: 'note.png' },
-    ];
 
     const randomIndex = Math.floor(Math.random() * notes.length);
     currentNote = notes[randomIndex].name;
@@ -98,27 +41,27 @@ function checkNote(selectedNote) {
 
     // Určení tlačítek
     const validNotes = {
-        'C': ['C', 'C2'],
-        'C#': ['C#', 'C2#'],
-        'C♭': ['C♭', 'C2♭'],
-        'D': ['D', 'D2'],
-        'D#': ['D#', 'D2#'],
-        'D♭': ['D♭', 'D2♭'],
-        'E': ['E', 'E2'],
-        'E#': ['E#', 'E2#'],
-        'E♭': ['E♭', 'E2♭'],
-        'F': ['F', 'F2'],
-        'F#': ['F#', 'F2#'],
-        'F♭': ['F♭', 'F2♭'],
-        'G': ['G', 'G2'],
-        'G#': ['G#', 'G2#'],
-        'G♭': ['G♭', 'G2♭'],
-        'A': ['A', 'A2'],
-        'A#': ['A#', 'A2#'],
-        'A♭': ['A♭', 'A2♭'],
-        'B': ['B', 'B2'],
-        'B#': ['B#', 'B2#'],
-        'B♭': ['B♭', 'B2♭'],
+        'C': ['C', 'c', 'c1', 'c2'],
+        'C♯': ['C♯', 'c♯', 'c1♯', 'c2♯'],
+        'C♭': ['C♭', 'c♭', 'c1♭', 'c2♭'],
+        'D': ['D', 'd', 'd1', 'd2'],
+        'D♯': ['D♯', 'd♯', 'd1♯', 'd2♯'],
+        'D♭': ['D♭', 'd♭', 'd1♭', 'd2♭'],
+        'E': ['E', 'e', 'e1', 'e2'],
+        'E♯': ['E♯', 'e♯', 'e1♯', 'e2♯'],
+        'E♭': ['E♭', 'e♭', 'e1♭', 'e2♭'],
+        'F': ['F', 'f', 'f1', 'f2'],
+        'F♯': ['F♯', 'f♯', 'f1♯', 'f2♯'],
+        'F♭': ['F♭', 'f♭', 'f1♭', 'f2♭'],
+        'G': ['G', 'g', 'g1', 'g2'],
+        'G♯': ['G♯', 'g♯', 'g1♯', 'g2♯'],
+        'G♭': ['G♭', 'g♭', 'g1♭', 'g2♭'],
+        'A': ['A', 'a', 'a1', 'a2'],
+        'A♯': ['A♯', 'a♯', 'a1♯', 'a2♯'],
+        'A♭': ['A♭', 'a♭', 'a1♭', 'a2♭'],
+        'B': ['B', 'b', 'b1', 'b2'],
+        'B♯': ['B♯', 'b♯', 'b1♯', 'b2♯'],
+        'B♭': ['B♭', 'b♭', 'b1♭', 'b2♭'],
     };
 
     
@@ -158,4 +101,5 @@ function checkNote(selectedNote) {
     }
 }
 
-window.onload = generateRandomNote; 
+window.onload = generateRandomNote;  
+window.checkNote = checkNote;

@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notyq</title>
+    <title>Noty</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Notyq</h1>
+    <h1>Noty</h1>
     <div id="staff">
+
+        <img id="trebleClef" src="image/key1.png" alt="Houslový klíč" style="height: 150px; position: absolute; left: -10px;top: -40px">
+
+
         <div class="staff-line"></div>
         <div class="staff-line"></div>
         <div class="staff-line"></div>
         <div class="staff-line"></div>
         <div class="staff-line"></div>
+
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+
+        <img id="bassClef" src="image/key2.png" alt="Basový klíč" style="height: 65px; position: absolute; left: 10px;top: 160px">
+
         <div class="note-display" id="noteDisplay">D</div>
         
-        <img id="noteImage" src="/note.png" alt="Nota" style="height: 100px; display: none;">
+        <img id="noteImage" src="image/note.png" alt="Nota" style="height: 100px; display: none;">
     </div> 
+
+    <div class="spacer"></div>
+
     <div id="buttons">
         <div class="button-row">
             <button class="note-button" onclick="checkNote('C#')">C#</button>
@@ -49,6 +65,6 @@
         </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
