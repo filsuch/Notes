@@ -51,8 +51,8 @@ function generateRandomNote() {
     
     
     const noteDisplay = document.getElementById('noteDisplay');
-    noteDisplay.innerText = currentNote;
-//  noteDisplay.innerText = '' 
+ //   noteDisplay.innerText = currentNote;
+    noteDisplay.innerText = '' 
     noteDisplay.style.top = (parseInt(activeNotes[randomIndex].position) + OFFSET) + 'px';
     
 //  noteDisplay.style.position = 'relative';
