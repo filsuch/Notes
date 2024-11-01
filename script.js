@@ -13,18 +13,20 @@ function generateRandomNote() {
     noteDisplay.innerText = currentNote; 
     noteDisplay.style.top = notes[randomIndex].position;
     
-    noteDisplay.style.position = 'relative';
-    noteDisplay.style.left = '50%'; 
+   // noteDisplay.style.position = 'relative';
+    noteDisplay.style.left = '50%';
     noteDisplay.style.transform = 'translateX(-50%)';
     
+
     noteDisplay.style.backgroundImage = `url(${notes[randomIndex].img})`;
     noteDisplay.style.backgroundSize = '20%';
     noteDisplay.style.backgroundRepeat = 'no-repeat';
     noteDisplay.style.backgroundPosition = '150px center'; 
     
-    noteDisplay.style.lineHeight = '20px';
-    noteDisplay.style.height = '20px';
-    noteDisplay.style.width = '200px'; 
+    noteDisplay.style.lineHeight = '200px';
+    noteDisplay.style.height = '200px';
+    noteDisplay.style.width = '300px'; 
+   // noteDisplay.style.top = '40px'
     
     
     const buttons = document.querySelectorAll('.note-button');
@@ -57,7 +59,7 @@ function checkNote(selectedNote) {
 
         setTimeout(() => {
             generateRandomNote(); 
-        }, 500); // 0.5 sekundy
+        }, 200); // 0.5 sekundy
 
     
         wrongNotes.clear();
