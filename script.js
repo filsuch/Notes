@@ -1,4 +1,5 @@
-import { notes } from './notes.js';
+import { notes } from './scripts/notes.js';
+import { validNotes } from './scripts/validnotes.js';
 let currentNote = '';
 let wrongNotes = new Set(); 
 
@@ -34,35 +35,15 @@ function generateRandomNote() {
     
     
     wrongNotes.clear();
+    
+
 }
 
 function checkNote(selectedNote) {
     const buttons = document.querySelectorAll('.note-button');
 
     // Určení tlačítek
-    const validNotes = {
-        'C': ['C', 'c', 'c1', 'c2'],
-        'C♯': ['C♯', 'c♯', 'c1♯', 'c2♯'],
-        'C♭': ['C♭', 'c♭', 'c1♭', 'c2♭'],
-        'D': ['D', 'd', 'd1', 'd2'],
-        'D♯': ['D♯', 'd♯', 'd1♯', 'd2♯'],
-        'D♭': ['D♭', 'd♭', 'd1♭', 'd2♭'],
-        'E': ['E', 'e', 'e1', 'e2'],
-        'E♯': ['E♯', 'e♯', 'e1♯', 'e2♯'],
-        'E♭': ['E♭', 'e♭', 'e1♭', 'e2♭'],
-        'F': ['F', 'f', 'f1', 'f2'],
-        'F♯': ['F♯', 'f♯', 'f1♯', 'f2♯'],
-        'F♭': ['F♭', 'f♭', 'f1♭', 'f2♭'],
-        'G': ['G', 'g', 'g1', 'g2'],
-        'G♯': ['G♯', 'g♯', 'g1♯', 'g2♯'],
-        'G♭': ['G♭', 'g♭', 'g1♭', 'g2♭'],
-        'A': ['A', 'a', 'a1', 'a2'],
-        'A♯': ['A♯', 'a♯', 'a1♯', 'a2♯'],
-        'A♭': ['A♭', 'a♭', 'a1♭', 'a2♭'],
-        'B': ['B', 'b', 'b1', 'b2'],
-        'B♯': ['B♯', 'b♯', 'b1♯', 'b2♯'],
-        'B♭': ['B♭', 'b♭', 'b1♭', 'b2♭'],
-    };
+    
 
     
     if (validNotes[selectedNote] && validNotes[selectedNote].includes(currentNote)) {
