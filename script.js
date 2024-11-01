@@ -3,31 +3,42 @@ import { validNotes } from './scripts/validnotes.js';
 let currentNote = '';
 let wrongNotes = new Set(); 
 
+
+
+
 function generateRandomNote() {
 
-    const randomIndex = Math.floor(Math.random() * notes.length);
-    currentNote = notes[randomIndex].name;
+    const isTrebleActive = document.getElementById('trebleToggle').checked;
+    const isBassActive = document.getElementById('bassToggle').checked;
+    const activeNotes = notes.filter(note => 
+        (note.clef === 'treble' && isTrebleActive) || (note.clef === 'bass' && isBassActive)
+    );
+
+    if (activeNotes.length === 0) return; 
+
+    const randomIndex = Math.floor(Math.random() * activeNotes.length);
+    currentNote = activeNotes[randomIndex].name;
     
     
     const noteDisplay = document.getElementById('noteDisplay');
-    noteDisplay.innerText = currentNote; 
-    noteDisplay.style.top = notes[randomIndex].position;
+    noteDisplay.innerText = currentNote;
+//  noteDisplay.innerText = '' 
+    noteDisplay.style.top = activeNotes[randomIndex].position;
     
-   // noteDisplay.style.position = 'relative';
+//  noteDisplay.style.position = 'relative';
     noteDisplay.style.left = '50%';
     noteDisplay.style.transform = 'translateX(-50%)';
     
 
-    noteDisplay.style.backgroundImage = `url(${notes[randomIndex].img})`;
+    noteDisplay.style.backgroundImage = `url(${activeNotes[randomIndex].img})`;
     noteDisplay.style.backgroundSize = '20%';
     noteDisplay.style.backgroundRepeat = 'no-repeat';
-    noteDisplay.style.backgroundPosition = '150px center'; 
+    noteDisplay.style.backgroundPosition = 'center'; 
     
     noteDisplay.style.lineHeight = '200px';
     noteDisplay.style.height = '200px';
     noteDisplay.style.width = '300px'; 
-   // noteDisplay.style.top = '40px'
-    
+  
     
     const buttons = document.querySelectorAll('.note-button');
     buttons.forEach(button => {
@@ -36,7 +47,8 @@ function generateRandomNote() {
     });
     
     
-    wrongNotes.clear();
+    wrongNotes.clear();s
+    updateNoteVisibility();
     
 
 }
@@ -44,10 +56,6 @@ function generateRandomNote() {
 function checkNote(selectedNote) {
     const buttons = document.querySelectorAll('.note-button');
 
-    // Určení tlačítek
-    
-
-    
     if (validNotes[selectedNote] && validNotes[selectedNote].includes(currentNote)) {
         
         buttons.forEach(button => {
@@ -84,5 +92,28 @@ function checkNote(selectedNote) {
     }
 }
 
+document.getElementById('trebleToggle').addEventListener('change', (event) => {
+    document.getElementById('trebleClef').style.display = event.target.checked ? 'block' : 'none';
+    const trebleLines = document.querySelectorAll('.treble-line');
+    trebleLines.forEach(line => {
+        line.style.display = event.target.checked ? 'block' : 'none';
+    });
+    updateNoteVisibility();
+});
+
+document.getElementById('bassToggle').addEventListener('change', (event) => {
+    document.getElementById('bassClef').style.display = event.target.checked ? 'block' : 'none';
+    const bassLines = document.querySelectorAll('.bass-line');
+    bassLines.forEach(line => {
+        line.style.display = event.target.checked ? 'block' : 'none';
+    });
+    updateNoteVisibility();
+});
+
+
+
+
+
+// globální 
 window.onload = generateRandomNote;  
 window.checkNote = checkNote;
