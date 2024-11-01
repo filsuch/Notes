@@ -11,11 +11,12 @@ body {
 
 #staff {
     position: relative;
-    width: 600px;
-    height: 240px;
-    border: 0px solid #ccc;
-    border-radius: 0px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    border: 0 solid #ccc;
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
     margin: 30px 0;
 }
 
@@ -31,37 +32,25 @@ body {
 .staff-line:nth-child(3) { top: 40px; }
 .staff-line:nth-child(4) { top: 60px; }
 .staff-line:nth-child(5) { top: 80px; }
-
 .staff-line:nth-child(6) { top: 160px; }
 .staff-line:nth-child(7) { top: 180px; }
 .staff-line:nth-child(8) { top: 200px; }
 .staff-line:nth-child(9) { top: 220px; }
 .staff-line:nth-child(10) { top: 240px; }
 
-.line {
+#line {
     position: absolute;
     height: 2px;
     background-color: black;
     width: 100%;
 }
 
-.line:nth-child(1) { top: 20px; }
-.line:nth-child(2) { top: 40px; }
-.line:nth-child(3) { top: 60px; }
-.line:nth-child(4) { top: 80px; }
-.line:nth-child(5) { top: 100px; }
-
-.line:nth-child(6) { top: 160px; }
-.line:nth-child(7) { top: 180px; }
-.line:nth-child(8) { top: 200px; }
-.line:nth-child(9) { top: 220px; }
-.line:nth-child(10) { top: 240px; }
-
 #noteDisplay {
     position: absolute;
-    font-size: 40px;
-    top: 70px;
-    left: 50px;
+    font-size: 8vw;
+    top: 10vw; 
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .note-display {
@@ -69,7 +58,7 @@ body {
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
+    font-size: 6vw;
     font-weight: bold;
     color: #000000;
     transition: top 0.5s;
@@ -78,28 +67,32 @@ body {
 #buttons {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
-    margin-top: 20px;
-}
-
-.button-row {
-    display: flex;
-    gap: 12px;
+    margin-top: 10px;
+    padding: 0 10vw; 
 }
 
 button {
-    width: 60px;
-    height: 60px;
-    font-size: 18px;
+   
+    width: 11vw;
+    height: 11vw;
+    font-size: 5vw; 
     text-align: center;
     padding: 0;
     background-color: #e0e0e0;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 0 0vw; 
 }
 
 button:hover {
@@ -108,10 +101,6 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
-}
-
-.note-button {
-    transition: background-color 0.3s ease;
 }
 
 .note-button.correct {
@@ -127,11 +116,28 @@ button:active {
 .spacer {
     height: 300px;
 }
+
 .spacer2 {
     height: 20px;
 }
 
 .note-name {
-    display: none; 
+    display: none;
 }
 
+@media (min-width: 600px) {
+    #noteDisplay {
+        font-size: 40px;
+        top: 70px;
+    }
+
+    .note-display {
+        font-size: 24px;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+}
